@@ -1,1 +1,45 @@
+class Student extends Person 
+{
+    private int [] testScores;
+    public Student(String firstName, String lastName, int idNumber, int[] testScores)
+    {
+        super(firstName, lastName, idNumber);
+        this.testScores = testScores;
+    }
 
+    public char calculate()
+    {
+        int total = 0;
+        char grade;
+        for(int i = 0; i < testScores.length; i++)
+        {
+            total += testScores[i];
+        }
+        int g = total / testScores.length;
+        if(g >= 90)
+        {
+            grade = 'O';   
+        }
+        else if(g >= 80)
+        {
+            grade = 'E';
+        }
+        else if(g >= 70)
+        {
+            grade = 'A';
+        }
+        else if(g >= 55)
+        {
+            grade = 'P';
+        }
+        else if(g >= 40)
+        {
+            grade = 'D';
+        }
+        else         {
+            grade = 'T';
+        }
+        return grade;
+
+    }
+}
